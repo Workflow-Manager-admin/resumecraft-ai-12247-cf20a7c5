@@ -16,13 +16,6 @@ import SectionsFAB from "./SectionsFAB";
  *
  * Handles split-view layout and placement of core features.
  */
-import React, { useState } from "react";
-import TemplateLibrary from "./TemplateLibrary";
-import DocumentEditor from "./DocumentEditor";
-import LivePreview from "./LivePreview";
-import ExportBar from "./ExportBar";
-import SectionsFAB from "./SectionsFAB";
-
 // Example/demo templates. In the future, these could be fetched or imported.
 const TEMPLATES = [
   {

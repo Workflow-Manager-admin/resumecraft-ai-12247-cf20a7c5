@@ -140,3 +140,6 @@ src/components/MainContainer.js
   Line 19:7:  Parsing error: Identifier 'React' has already been declared. (19:7)
 
 webpack compiled with 2 errors
+Compiling...
+Compiled successfully!
+webpack compiled successfully
