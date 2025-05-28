@@ -14,13 +14,23 @@ import React from "react";
  * - (future) section editing callbacks
  */
 // PUBLIC_INTERFACE
-function DocumentEditor(/* { documentData, onChange, suggestions, errors } */) {
+function DocumentEditor({ selectedTemplate /*, documentData, onChange, suggestions, errors */ }) {
   return (
     <div>
-      {/* TODO: Implement document form editor UI */}
-      <h2 style={{ color: "#ff00cc" }}>Document Editor</h2>
+      <h2 style={{ color: selectedTemplate?.accent || "#ff00cc" }}>
+        Document Editor
+      </h2>
       <p style={{ color: "var(--text-secondary)", fontSize: ".98rem" }}>
-        Form-based editor for resume and cover letter content.<br />[Component stub]
+        <span>
+          Form-based editor for resume and cover letter content.
+        </span>
+        <br />
+        <span>
+          <strong>Selected Template:</strong>{" "}
+          <span style={{ color: selectedTemplate?.accent, fontWeight: 600 }}>
+            {selectedTemplate?.name} ({selectedTemplate?.id})
+          </span>
+        </span>
       </p>
     </div>
   );
