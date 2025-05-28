@@ -1,0 +1,232 @@
+:root {
+  /* Neon-Glitter Dark Theme Palette */
+  --primary: #0ff0fc;
+  --accent: #ff00cc;
+  --secondary: #1a1a2e;
+  --bg-main: #161624;
+  --bg-panel: #21193b;
+  --bg-glass: rgba(26,26,46,0.8);
+  --border-glow: 0 0 8px var(--primary), 0 0 18px var(--accent);
+  --text-color: #eafafd;
+  --text-secondary: #bbb8e2;
+  --header-glitter: linear-gradient(90deg, #0ff0fc, #ff00cc 60%, #fff 80%);
+  --btn-shadow: 0 0 18px 4px #0ff0fc33, 0 0 10px 2px #ff00cc55;
+  --btn-hover-glow: 0 0 12px 6px #ff00cc99;
+  --fab-shadow: 0 0 30px #0ff0fc99, 0 0 8px #ff00cc66;
+  --font-main: 'Orbitron', 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+/* Modern Fonts: Try to import Orbitron for that neon-arcade look */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+body {
+  background: var(--bg-main);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  letter-spacing: 0.03em;
+}
+
+/* Navbar with glow */
+.navbar {
+  background: var(--secondary);
+  border-bottom: 2.5px solid var(--primary);
+  box-shadow: 0 2px 24px #0ff0fc33;
+}
+
+/* Logo Neon Glow */
+.logo, .logo-symbol {
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+  color: var(--accent);
+  text-shadow:
+    0 0 10px var(--primary),
+    0 0 15px var(--accent),
+    0 0 2px #fff;
+}
+
+/* Split-view main layout panels */
+.app main {
+  background: linear-gradient(120deg, #21193b 0%, #161624 70%);
+}
+
+section {
+  background: var(--bg-glass);
+  border-radius: 14px;
+  border: 1.5px solid var(--primary);
+  box-shadow: var(--border-glow);
+  transition: box-shadow 0.25s;
+}
+
+section:hover {
+  box-shadow: 0 0 0 3px var(--accent), var(--border-glow);
+}
+
+/* Neon Section Headers with Glitter Text Effect */
+h2, .neon-header {
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-size: 1.44rem;
+  font-weight: 700;
+  background: var(--header-glitter);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 6px var(--accent),
+    0 0 14px var(--primary),
+    1px 2px 34px #fff9,
+    0 0 1px #fff;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+/* General Input/Control Styles */
+input, textarea, select {
+  background: #25253a;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: 6px;
+  padding: 9px 13px;
+  font-size: 1rem;
+  outline: none;
+  font-family: var(--font-main);
+  box-shadow: 0 0 12px #0ff0fc33;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 16px #ff00cc99;
+}
+
+/* Neon Buttons and Action Controls */
+.btn, button[type="button"], input[type="submit"] {
+  background: linear-gradient(90deg, var(--primary) 55%, var(--accent));
+  color: #231422;
+  font-family: 'Orbitron', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 27px;
+  letter-spacing: 0.045em;
+  font-size: 1.12rem;
+  margin: 4px 6px;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  position: relative;
+  transition: box-shadow 0.2s, background 0.16s;
+  text-shadow: 0 0 2.5px #fff, 0 0 10px #0ff0fc55;
+}
+
+.btn:hover, button[type="button"]:hover, input[type="submit"]:hover {
+  background: linear-gradient(-90deg, var(--accent), var(--primary) 70%);
+  color: #fff;
+  box-shadow: var(--btn-hover-glow), var(--btn-shadow);
+  text-shadow: 0 0 4px #fff,0 0 14px #ff00cc,0 0 10px #0ff0fc;
+}
+
+.btn-large {
+  padding: 15px 38px;
+  font-size: 1.2rem;
+}
+
+/* Floating Action Button (SectionsFAB) */
+.fab, .sections-fab, .fab-neon {
+  position: fixed;
+  right: 36px;
+  bottom: 44px;
+  width: 78px;
+  height: 78px;
+  background: linear-gradient(100deg, var(--primary) 60%, var(--accent) 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--fab-shadow);
+  font-size: 2.8rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: box-shadow 0.18s;
+  cursor: pointer;
+  text-shadow: 0 0 14px #fff, 0 0 30px #0ff0fc;
+  outline: 3px solid var(--accent);
+}
+
+.fab:hover, .sections-fab:hover, .fab-neon:hover {
+  background: linear-gradient(120deg, var(--accent), var(--primary) 80%);
+  box-shadow: 0 0 44px #ff00ccdf, 0 0 20px #0ff0fc, var(--fab-shadow);
+}
+
+/* Glittery border for key sections or preview */
+.glitter-border {
+  border: 2.5px solid;
+  border-image: linear-gradient(90deg, #ff00cc, #0ff0fc, #fff) 1;
+  box-shadow:
+    0 0 18px 3px #0ff0fcbb,
+    0 0 6px 2px #ff00cc99,
+    0 0 1px 0px #fff;
+}
+
+/* Export bar, template thumbnails, and split view tweaks */
+.export-bar, .export-bar-glow {
+  background: rgba(38,14,38, 0.96);
+  border-radius: 11px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 20px #ff00cc55, 0 1px 18px #0ff0fc77;
+  padding: 1rem 1.5rem;
+  margin-top: 6px;
+}
+
+/* Split layout effect for columns */
+@media (min-width: 900px) {
+  .split-left {
+    border-right: 2.5px solid var(--primary);
+    box-shadow: 7px 0 30px -15px #0ff0fc33;
+    padding-right: 32px;
+  }
+  .split-right {
+    border-left: 2.5px solid var(--accent);
+    box-shadow: -7px 0 30px -15px #ff00cc44;
+    padding-left: 32px;
+  }
+}
+
+/* For scrollbars / subtle neon effect */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #26263f 70%, #0ff0fc 100%);
+  border-radius: 8px;
+  box-shadow: 0 0 8px #0ff0fc66;
+}
+::-webkit-scrollbar-track {
+  background: #171729;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Misc text and hint colors */
+a, .glow-text-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-shadow: 0 0 6px var(--primary), 0 0 1.5px #fff;
+  transition: color 0.13s;
+}
+a:hover, .glow-text-link:hover {
+  color: var(--accent);
+  text-shadow: 0 0 18px var(--accent), 0 0 3px #fff;
+}
+
+/* Subtle animated glitter sparkle for headers */
+@keyframes glitter {
+  0% { text-shadow: 0 0 10px #0ff0fc, 0 0 50px #ff00cc33; }
+  50% { text-shadow: 0 0 24px #ff00cc, 0 0 60px #fff9;}
+  100% { text-shadow: 0 0 10px #0ff0fc, 0 0 50px #ff00cc33;}
+}
+h2, .neon-header { animation: glitter 2.1s infinite alternate; }
+
+/* Make sure old components do not interfere with new theme */
+.container, .hero, .title, .subtitle {
+  background: transparent;
+  box-shadow: none;
+}
