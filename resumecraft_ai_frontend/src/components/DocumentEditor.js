@@ -280,6 +280,37 @@ function DocumentEditor({
                     }}
                   />
                   <div style={{ display: "flex", gap: 8 }}>
+                    {/* --- AI action buttons mocked per section --- */}
+                    <button
+                      type="button"
+                      className="btn"
+                      style={{
+                        background: "#25253a",
+                        color: selectedTemplate?.accent || "#0ff0fc",
+                        border: `1.3px solid ${selectedTemplate?.accent || "#0ff0fc"}`,
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        padding: "4px 12px",
+                        marginRight: 3
+                      }}
+                      onClick={() => window.alert(`Simulated AI Check (${sec.label})!`)}
+                      title="AI grammar & tone check for this section"
+                    >AI Check</button>
+                    <button
+                      type="button"
+                      className="btn"
+                      style={{
+                        background: "#1a1a2e",
+                        color: selectedTemplate?.accent || "#ff00cc",
+                        border: `1.3px solid ${selectedTemplate?.accent || "#ff00cc"}`,
+                        fontWeight: 700,
+                        fontSize: "0.95rem",
+                        padding: "4px 12px",
+                        marginRight: 3
+                      }}
+                      onClick={() => window.alert(`Simulated AI Suggest for (${sec.label})!`)}
+                      title="AI content suggestion for this section"
+                    >Suggest</button>
                     {/* Move up */}
                     <button
                       type="button"
