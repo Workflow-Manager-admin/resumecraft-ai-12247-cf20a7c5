@@ -244,7 +244,7 @@ function MainContainer() {
             border: "1px solid var(--border-color, #333)"
           }}
         >
-          <ExportBar />
+          <ExportBar documentData={documentData} />
         </section>
       </div>
       {/* Floating Action Button for Sections - add only */}
