@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/resumecraft-ai-12247-cf20a7c5/resumecraft_ai_frontend"
+}
