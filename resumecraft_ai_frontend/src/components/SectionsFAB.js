@@ -6,12 +6,12 @@ import React from "react";
  * Purpose: Floating action button for managing document sections (add, remove, reorder sections).
  * Always visible, floating over main content.
  *
- * Props (planned):
+ * Props:
  * - onAddSection: function
  * - (future) expanded/menu for reorder/remove/tips
  */
 // PUBLIC_INTERFACE
-function SectionsFAB(/* { onAddSection } */) {
+function SectionsFAB({ onAddSection }) {
   return (
     <button
       style={{
@@ -30,7 +30,9 @@ function SectionsFAB(/* { onAddSection } */) {
         zIndex: 200,
         cursor: "pointer"
       }}
-      title="Manage Sections"
+      title="Add Section"
+      onClick={onAddSection}
+      aria-label="Add a new section"
     >
       +
     </button>
