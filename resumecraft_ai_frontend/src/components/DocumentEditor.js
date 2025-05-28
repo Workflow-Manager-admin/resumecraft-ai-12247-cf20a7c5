@@ -98,6 +98,37 @@ function DocumentEditor({
       <h2 style={{ color: selectedTemplate?.accent || "#ff00cc" }}>
         Document Editor
       </h2>
+      {/* --- AI Feature Trigger Buttons (Mock/Placeholder) --- */}
+      <div style={{ display: 'flex', gap: 16, marginBottom: 18 }}>
+        <button
+          type="button"
+          className="btn"
+          style={{
+            background: 'linear-gradient(90deg, #0ff0fc 55%, #ff00cc)',
+            color: '#222',
+            fontWeight: 700,
+            letterSpacing: '.04em',
+          }}
+          // Replace with real grammar check logic in the future
+          onClick={() => window.alert('Simulated: Running Grammar & Tone Check!')}
+        >
+          📝 Grammar & Tone Check (AI)
+        </button>
+        <button
+          type="button"
+          className="btn"
+          style={{
+            background: 'linear-gradient(90deg, #ff00cc 60%, #0ff0fc 100%)',
+            color: '#222',
+            fontWeight: 700,
+            letterSpacing: '.04em',
+          }}
+          // Replace with content suggestion logic in the future
+          onClick={() => window.alert('Simulated: Showing AI Content Suggestions!')}
+        >
+          💡 Suggest Content (AI)
+        </button>
+      </div>
       <form>
         {/* BASICS */}
         <fieldset style={{
