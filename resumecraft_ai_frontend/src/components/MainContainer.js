@@ -16,8 +16,44 @@ import SectionsFAB from "./SectionsFAB";
  *
  * Handles split-view layout and placement of core features.
  */
+import React, { useState } from "react";
+import TemplateLibrary from "./TemplateLibrary";
+import DocumentEditor from "./DocumentEditor";
+import LivePreview from "./LivePreview";
+import ExportBar from "./ExportBar";
+import SectionsFAB from "./SectionsFAB";
+
+// Example/demo templates. In the future, these could be fetched or imported.
+const TEMPLATES = [
+  {
+    id: "modern",
+    name: "Modern Neon",
+    accent: "#0ff0fc",
+    preview: "linear-gradient(90deg, #0ff0fc 70%, #ff00cc 100%)"
+  },
+  {
+    id: "classic",
+    name: "Classic Elegance",
+    accent: "#e87a41",
+    preview: "linear-gradient(100deg, #e87a41 50%, #1a1a2e 100%)"
+  },
+  {
+    id: "minimal",
+    name: "Minimal Glow",
+    accent: "#ff00cc",
+    preview: "linear-gradient(90deg, #ff00cc 60%, #0ff0fc 100%)"
+  }
+];
+
 // PUBLIC_INTERFACE
 function MainContainer() {
+  // Manage selected template in the MainContainer
+  const [selectedTemplateId, setSelectedTemplateId] = useState(TEMPLATES[0].id);
+
+  // Find full template object by id
+  const selectedTemplate =
+    TEMPLATES.find((tpl) => tpl.id === selectedTemplateId) || TEMPLATES[0];
+
   return (
     <div
       style={{
@@ -51,7 +87,11 @@ function MainContainer() {
             border: "1px solid var(--border-color, #222)"
           }}
         >
-          <TemplateLibrary />
+          <TemplateLibrary
+            templates={TEMPLATES}
+            selectedTemplateId={selectedTemplateId}
+            onSelectTemplate={setSelectedTemplateId}
+          />
         </section>
         <section
           style={{
@@ -62,7 +102,7 @@ function MainContainer() {
             border: "1px solid var(--border-color, #222)"
           }}
         >
-          <DocumentEditor />
+          <DocumentEditor selectedTemplate={selectedTemplate} />
         </section>
       </div>
       {/* Right Column: Live Preview and ExportBar */}
@@ -85,7 +125,7 @@ function MainContainer() {
             marginBottom: 12
           }}
         >
-          <LivePreview />
+          <LivePreview selectedTemplate={selectedTemplate} />
         </section>
         <section
           style={{
