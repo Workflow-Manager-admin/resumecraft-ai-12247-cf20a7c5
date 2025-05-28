@@ -198,6 +198,36 @@ function DocumentEditor({
             fontWeight: 600,
             fontSize: "1.08rem"
           }}>Professional Summary</legend>
+          {/* Inline AI triggers for summary assistance */}
+          <div style={{ display: 'flex', gap: 10, marginBottom: 6 }}>
+            <button
+              type="button"
+              className="btn"
+              style={{
+                background: selectedTemplate?.accent || "#ff00cc",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: "0.98rem",
+                padding: "6px 16px"
+              }}
+              onClick={() => window.alert("Simulated AI grammar/tone check of summary!")}
+              title="Check this summary for grammar/tone using AI"
+            >AI Check</button>
+            <button
+              type="button"
+              className="btn"
+              style={{
+                background: "#1a1a2e",
+                color: selectedTemplate?.accent || "#ff00cc",
+                border: `1.7px solid ${selectedTemplate?.accent || "#ff00cc"}`,
+                fontWeight: 700,
+                fontSize: "0.98rem",
+                padding: "6px 16px"
+              }}
+              onClick={() => window.alert("Simulated AI suggestions for summary!")}
+              title="Get AI suggestions for summary content"
+            >Suggest</button>
+          </div>
           <textarea
             name="summary"
             placeholder="Brief summary e.g. Experienced software engineer specializing in..."
